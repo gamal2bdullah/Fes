@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دراسة الجدوى - تطبيق محسن</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">دراسة الجدوى</a>
+            <nav class="nav">
+                <a href="#project-info" class="nav-link active">معلومات المشروع</a>
+                <a href="#market-analysis" class="nav-link">تحليل السوق</a>
+                <a href="#financial-analysis" class="nav-link">التحليل المالي</a>
+                <a href="#charts" class="nav-link">الرسوم البيانية</a>
+                <a href="#ai-assistant-section" class="nav-link">المساعد الذكي</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="container">
+        <div class="row">
+            <!-- القائمة الجانبية -->
+            <div class="col-3 col-md-4 col-sm-12">
+                <aside class="sidebar">
+                    <h3 class="sidebar-title">أقسام دراسة الجدوى</h3>
+                    <nav class="sidebar-nav">
+                        <a href="#project-info" class="sidebar-link active">معلومات المشروع</a>
+                        <a href="#market-analysis" class="sidebar-link">تحليل السوق</a>
+                        <a href="#competitors" class="sidebar-link">تحليل المنافسين</a>
+                        <a href="#financial-analysis" class="sidebar-link">التحليل المالي</a>
+                        <a href="#break-even" class="sidebar-link">نقطة التعادل</a>
+                        <a href="#cash-flow" class="sidebar-link">التدفق النقدي</a>
+                        <a href="#financial-indicators" class="sidebar-link">المؤشرات المالية</a>
+                        <a href="#charts" class="sidebar-link">الرسوم البيانية</a>
+                        <a href="#risk-analysis" class="sidebar-link">تحليل المخاطر</a>
+                        <a href="#recommendations" class="sidebar-link">التوصيات</a>
+                        <a href="#ai-assistant-section" class="sidebar-link">المساعد الذكي</a>
+                    </nav>
+                    
+                    <h3 class="sidebar-title" style="margin-top: 20px;">الأدوات</h3>
+                    <div class="btn-group" style="flex-direction: column;">
+                        <button id="export-pdf-btn" class="btn btn-primary btn-icon">
+                            <i class="fas fa-file-pdf"></i> تصدير PDF
+                        </button>
+                        <button id="save-data-btn" class="btn btn-secondary btn-icon">
+                            <i class="fas fa-save"></i> حفظ البيانات
+                        </button>
+                        <button id="print-report-btn" class="btn btn-outline-primary btn-icon">
+                            <i class="fas fa-print"></i> طباعة التقرير
+                        </button>
+                        <button id="test-compatibility-btn" class="btn btn-outline-primary btn-icon">
+                            <i class="fas fa-check-circle"></i> اختبار التوافق
+                        </button>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- المحتوى الرئيسي -->
+            <div class="col-9 col-md-8 col-sm-12">
+                <!-- معلومات المشروع -->
+                <section id="project-info" class="section">
+                    <div class="card">
+                        <h2>معلومات المشروع</h2>
+                        <form id="project-info-form">
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="text" id="project-name" class="form-control" placeholder=" " required>
+                                        <label for="project-name" class="form-label">اسم المشروع</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="text" id="project-owner" class="form-control" placeholder=" " required>
+                                        <label for="project-owner" class="form-label">صاحب المشروع</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="text" id="project-location" class="form-control" placeholder=" " required>
+                                        <label for="project-location" class="form-label">موقع المشروع</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="date" id="project-date" class="form-control" placeholder=" " required>
+                                        <label for="project-date" class="form-label">تاريخ بدء المشروع</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group floating-label">
+                                <textarea id="project-description" class="form-control" rows="4" placeholder=" " required></textarea>
+                                <label for="project-description" class="form-label">وصف المشروع</label>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <select id="project-type" class="form-control" required>
+                                            <option value=""></option>
+                                            <option value="commercial">تجاري</option>
+                                            <option value="industrial">صناعي</option>
+                                            <option value="service">خدمي</option>
+                                            <option value="agricultural">زراعي</option>
+                                            <option value="technology">تكنولوجي</option>
+                                            <option value="other">أخرى</option>
+                                        </select>
+                                        <label for="project-type" class="form-label">نوع المشروع</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <select id="project-size" class="form-control" required>
+                                            <option value=""></option>
+                                            <option value="micro">متناهي الصغر</option>
+                                            <option value="small">صغير</option>
+                                            <option value="medium">متوسط</option>
+                                            <option value="large">كبير</option>
+                                        </select>
+                                        <label for="project-size" class="form-label">حجم المشروع</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                
+                <!-- تحليل السوق -->
+                <section id="market-analysis" class="section">
+                    <div class="card">
+                        <h2>تحليل السوق</h2>
+                        <form id="market-analysis-form">
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="market-size" class="form-control" placeholder=" " min="0" required>
+                                        <label for="market-size" class="form-label">حجم السوق (بالوحدة)</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="market-growth" class="form-control" placeholder=" " min="0" max="100" step="0.1" required>
+                                        <label for="market-growth" class="form-label">معدل نمو السوق (%)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group floating-label">
+                                <textarea id="target-customers" class="form-control" rows="3" placeholder=" " required></textarea>
+                                <label for="target-customers" class="form-label">العملاء المستهدفون</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="competition-level" class="form-label">مستوى المنافسة</label>
+                                <input type="range" id="competition-level" class="form-control" min="1" max="5" step="1" value="3">
+                                <div class="row" style="margin-top: 5px;">
+                                    <div class="col">منخفض جداً</div>
+                                    <div class="col" style="text-align: center;">منخفض</div>
+                                    <div class="col" style="text-align: center;">متوسط</div>
+                                    <div class="col" style="text-align: center;">مرتفع</div>
+                                    <div class="col" style="text-align: left;">مرتفع جداً</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- تحليل المنافسين -->
+                    <div id="competitors" class="card">
+                        <h2>تحليل المنافسين</h2>
+                        <div id="competitors-container">
+                            <!-- سيتم إضافة عناصر المنافسين هنا ديناميكياً -->
+                        </div>
+                        <button id="add-competitor-btn" class="btn btn-primary btn-icon">
+                            <i class="fas fa-plus"></i> إضافة منافس
+                        </button>
+                    </div>
+                </section>
+                
+                <!-- التحليل المالي -->
+                <section id="financial-analysis" class="section">
+                    <div class="card">
+                        <h2>التحليل المالي</h2>
+                        <form id="financial-analysis-form">
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="initial-investment" class="form-control calculation-input" placeholder=" " min="0" step="0.01" required>
+                                        <label for="initial-investment" class="form-label">الاستثمار الأولي ($)</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="project-duration" class="form-control calculation-input" placeholder=" " min="1" max="20" step="1" value="5" required>
+                                        <label for="project-duration" class="form-label">مدة المشروع (سنوات)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="fixed-costs" class="form-control calculation-input" placeholder=" " min="0" step="0.01" required>
+                                        <label for="fixed-costs" class="form-label">التكاليف الثابتة (سنوياً $)</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="variable-costs" class="form-control calculation-input" placeholder=" " min="0" step="0.01" required>
+                                        <label for="variable-costs" class="form-label">التكاليف المتغيرة (سنوياً $)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="unit-price" class="form-control calculation-input" placeholder=" " min="0" step="0.01" required>
+                                        <label for="unit-price" class="form-label">سعر بيع الوحدة ($)</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="unit-cost" class="form-control calculation-input" placeholder=" " min="0" step="0.01" required>
+                                        <label for="unit-cost" class="form-label">تكلفة الوحدة المتغيرة ($)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="expected-sales" class="form-control calculation-input" placeholder=" " min="0" required>
+                                        <label for="expected-sales" class="form-label">المبيعات المتوقعة (وحدة/سنة)</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-12">
+                                    <div class="form-group floating-label">
+                                        <input type="number" id="discount-rate" class="form-control calculation-input" placeholder=" " min="0" max="100" step="0.1" value="10" required>
+                                        <label for="discount-rate" class="form-label">معدل الخصم (%)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- نقطة التعادل -->
+                    <div id="break-even" class="card">
+                        <h2>نقطة التعادل</h2>
+                        <div class="row">
+                            <div class="col-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="break-even-units" class="form-label">نقطة التعادل (عدد الوحدات)</label>
+                                    <input type="text" id="break-even-units" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="break-even-revenue" class="form-label">نقطة التعادل (الإيرادات $)</label>
+                                    <input type="text" id="break-even-revenue" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="break-even-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- التدفق النقدي -->
+                    <div id="cash-flow" class="card">
+                        <h2>التدفق النقدي</h2>
+                        <div id="cash-flow-container">
+                            <!-- سيتم إضافة سنوات التدفق النقدي هنا ديناميكياً -->
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="cash-flow-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- المؤشرات المالية -->
+                    <div id="financial-indicators" class="card">
+                        <h2>المؤشرات المالية</h2>
+                        <div class="row">
+                            <div class="col-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="roi" class="form-label">معدل العائد على الاستثمار (ROI)</label>
+                                    <input type="text" id="roi" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="irr" class="form-label">معدل العائد الداخلي (IRR)</label>
+                                    <input type="text" id="irr" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="npv" class="form-label">صافي القيمة الحالية (NPV)</label>
+                                    <input type="text" id="npv" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="payback-period" class="form-label">فترة الاسترداد (سنوات)</label>
+                                    <input type="text" id="payback-period" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="financial-indicators-chart"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- الرسوم البيانية -->
+                <section id="charts" class="section">
+                    <div class="card">
+                        <h2>الرسوم البيانية</h2>
+                        <div class="tabs">
+                            <div class="tab active" data-tab="demand-chart-tab">الطلب المتوقع</div>
+                            <div class="tab" data-tab="revenue-expense-chart-tab">الإيرادات والتكاليف</div>
+                            <div class="tab" data-tab="sensitivity-chart-tab">تحليل الحساسية</div>
+                            <div class="tab" data-tab="competitors-chart-tab">تحليل المنافسين</div>
+                            <div class="tab" data-tab="swot-chart-tab">تحليل SWOT</div>
+                        </div>
+                        
+                        <div class="tab-content active" id="demand-chart-tab">
+                            <div class="chart-container">
+                                <canvas id="demand-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="revenue-expense-chart-tab">
+                            <div class="chart-container">
+                                <canvas id="revenue-expense-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="sensitivity-chart-tab">
+                            <div class="chart-container">
+                                <canvas id="sensitivity-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="competitors-chart-tab">
+                            <div class="chart-container">
+                                <canvas id="competitors-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="swot-chart-tab">
+                            <div class="chart-container">
+                                <canvas id="swot-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- تحليل المخاطر -->
+                <section id="risk-analysis" class="section">
+                    <div class="card">
+                        <h2>تحليل المخاطر</h2>
+                        <div id="risks-container">
+                            <!-- سيتم إضافة عناصر المخاطر هنا ديناميكياً -->
+                        </div>
+                        <button id="add-risk-btn" class="btn btn-primary btn-icon">
+                            <i class="fas fa-plus"></i> إضافة مخاطرة
+                        </button>
+                        
+                        <div class="form-group" style="margin-top: 20px;">
+                            <label for="risk-summary" class="form-label">ملخص تحليل المخاطر</label>
+                            <textarea id="risk-summary" class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- التوصيات -->
+                <section id="recommendations" class="section">
+                    <div class="card">
+                        <h2>التوصيات</h2>
+                        <div id="recommendations-container">
+                            <ul>
+                                <!-- سيتم إضافة التوصيات هنا ديناميكياً -->
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-recommendation" class="form-label">إضافة توصية جديدة</label>
+                            <div class="row">
+                                <div class="col-9 col-sm-8">
+                                    <input type="text" id="new-recommendation" class="form-control">
+                                </div>
+                                <div class="col-3 col-sm-4">
+                                    <button id="add-recommendation-btn" class="btn btn-primary btn-icon">
+                                        <i class="fas fa-plus"></i> إضافة
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- المساعد الذكي -->
+                <section id="ai-assistant-section" class="section">
+                    <div class="card">
+                        <div class="ai-assistant">
+                            <div class="ai-header">
+                                <div class="ai-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3 class="ai-title">المساعد الذكي لدراسة الجدوى</h3>
+                            </div>
+                            
+                            <div class="ai-chat" id="ai-chat-container">
+                                <div class="ai-message assistant">
+                                    مرحباً! أنا المساعد الذكي لدراسة الجدوى. يمكنني مساعدتك في تحليل بياناتك وتقديم توصيات لتحسين مشروعك. كيف يمكنني مساعدتك اليوم؟
+                                </div>
+                                <!-- سيتم إضافة رسائل المحادثة هنا ديناميكياً -->
+                            </div>
+                            
+                            <div class="ai-input-container">
+                                <input type="text" id="ai-input" class="ai-input" placeholder="اكتب سؤالك هنا...">
+                                <button id="ai-send-btn" class="ai-send-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            
+                            <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                                <i class="fas fa-lock"></i> جميع البيانات تتم معالجتها محلياً ولا يتم حفظها أو مشاركتها.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- نافذة إعدادات التصدير -->
+    <div id="export-settings-modal" class="modal export-settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">إعدادات تصدير PDF</h3>
+                <button id="close-export-settings" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="export-settings-tabs">
+                    <div class="export-settings-tab active" data-tab="general-settings">إعدادات عامة</div>
+                    <div class="export-settings-tab" data-tab="page-settings">إعدادات الصفحة</div>
+                    <div class="export-settings-tab" data-tab="content-settings">إعدادات المحتوى</div>
+                    <div class="export-settings-tab" data-tab="advanced-settings">إعدادات متقدمة</div>
+                </div>
+                
+                <div class="export-settings-content active" id="general-settings">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="export-title" class="form-label">عنوان المستند</label>
+                                <input type="text" id="export-title" class="form-control" value="دراسة الجدوى">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="export-author" class="form-label">اسم المؤلف</label>
+                                <input type="text" id="export-author" class="form-control" value="المستخدم">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="export-settings-content" id="page-settings">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="page-size" class="form-label">حجم الصفحة</label>
+                                <select id="page-size" class="form-control">
+                                    <option value="a4">A4</option>
+                                    <option value="letter">Letter</option>
+                                    <option value="legal">Legal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="page-orientation" class="form-label">اتجاه الصفحة</label>
+                                <select id="page-orientation" class="form-control">
+                                    <option value="portrait">عمودي</option>
+                                    <option value="landscape">أفقي</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="margin-top" class="form-label">الهامش العلوي (مم)</label>
+                                <input type="number" id="margin-top" class="form-control" value="10" min="0" max="50">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="margin-right" class="form-label">الهامش الأيمن (مم)</label>
+                                <input type="number" id="margin-right" class="form-control" value="10" min="0" max="50">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="margin-bottom" class="form-label">الهامش السفلي (مم)</label>
+                                <input type="number" id="margin-bottom" class="form-control" value="10" min="0" max="50">
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="margin-left" class="form-label">الهامش الأيسر (مم)</label>
+                                <input type="number" id="margin-left" class="form-control" value="10" min="0" max="50">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="export-settings-content" id="content-settings">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">الأقسام المضمنة</label>
+                                <div>
+                                    <input type="checkbox" id="include-project-info" checked>
+                                    <label for="include-project-info">معلومات المشروع</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="include-market-analysis" checked>
+                                    <label for="include-market-analysis">تحليل السوق</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="include-financial-analysis" checked>
+                                    <label for="include-financial-analysis">التحليل المالي</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="include-charts" checked>
+                                    <label for="include-charts">الرسوم البيانية</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="include-recommendations" checked>
+                                    <label for="include-recommendations">التوصيات</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="include-risk-analysis" checked>
+                                    <label for="include-risk-analysis">تحليل المخاطر</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">إعدادات الرسوم البيانية</label>
+                                <div>
+                                    <label for="chart-width" class="form-label">عرض الرسم البياني (بكسل)</label>
+                                    <input type="number" id="chart-width" class="form-control" value="500" min="200" max="1000">
+                                </div>
+                                <div>
+                                    <label for="chart-height" class="form-label">ارتفاع الرسم البياني (بكسل)</label>
+                                    <input type="number" id="chart-height" class="form-control" value="300" min="100" max="800">
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="include-chart-titles" checked>
+                                    <label for="include-chart-titles">تضمين عناوين الرسوم البيانية</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="include-chart-legends" checked>
+                                    <label for="include-chart-legends">تضمين مفاتيح الرسوم البيانية</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="export-settings-content" id="advanced-settings">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="pdf-compression" class="form-label">مستوى ضغط الملف</label>
+                                <select id="pdf-compression" class="form-control">
+                                    <option value="none">بدون ضغط</option>
+                                    <option value="low">منخفض</option>
+                                    <option value="medium" selected>متوسط</option>
+                                    <option value="high">عالي</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="split-sections" checked>
+                                <label for="split-sections">تقسيم الأقسام إلى صفحات منفصلة</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="add-page-numbers" checked>
+                                <label for="add-page-numbers">إضافة أرقام الصفحات</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <input type="checkbox" id="add-table-of-contents" checked>
+                                <label for="add-table-of-contents">إضافة جدول محتويات</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="add-header-footer" checked>
+                                <label for="add-header-footer">إضافة ترويسة وتذييل</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="export-preview">
+                        <p style="text-align: center;">معاينة إعدادات التصدير</p>
+                        <div id="export-preview-content" style="text-align: center; margin-top: 20px;">
+                            <p>سيتم تصدير المستند بالإعدادات المحددة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-export-btn" class="btn btn-primary">تصدير</button>
+                <button id="close-export-settings-btn" class="btn btn-outline-primary">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- المكتبات الخارجية -->
+    <script src="libs/chart.min.js"></script>
+    <script src="libs/jspdf.umd.min.js"></script>
+    <script src="libs/html2canvas.min.js"></script>
+    
+    <!-- ملفات JavaScript الخاصة بالتطبيق -->
+    <script src="app.js"></script>
+    <script src="dynamic-input.js"></script>
+    <script src="advanced-charts.js"></script>
+    <script src="ai-features.js"></script>
+    <script src="pdf-export.js"></script>
+    <script src="testing.js"></script>
+</body>
+</html>
